@@ -4,11 +4,10 @@
 
 **Teach a computer to see, using nothing but your webcam.**
 
-Train an image classifier in seconds, right in your browser. No install, no account, and no images ever leave your device.
+Train an image classifier in seconds. No install, no account, and no images ever leave your device.
 
 [![Live demo](https://img.shields.io/badge/Live%20demo-open%20the%20app-E30A0A?style=for-the-badge)](https://emfink.github.io/)
 
-![Runs in the browser](https://img.shields.io/badge/runs%20in-the%20browser-2F2552)
 ![No backend](https://img.shields.io/badge/backend-none-2F2552)
 ![TensorFlow.js](https://img.shields.io/badge/TensorFlow.js-4.22-2F2552)
 ![Single file](https://img.shields.io/badge/app-single%20HTML%20file-2F2552)
@@ -85,7 +84,7 @@ TensorFlow.js and the model load from a CDN on first visit, so an internet conne
 
 ## Privacy
 
-Everything happens in your browser. Camera frames are never sent to a server, and nothing is saved. Reloading the page clears all recorded examples.
+Everything happens on your device. Camera frames are never sent to a server, and nothing is saved. Reloading the page clears all recorded examples.
 
 ## Run locally
 
@@ -96,10 +95,6 @@ python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000>. The camera needs a secure context, so use `localhost` or `https`. Opening `index.html` directly from disk (`file://`) will not work.
-
-## Browser support
-
-Developed and tested in Chrome. The app needs a modern browser that supports webcam access (`getUserMedia`) and WebGL, which includes current versions of Chrome, Edge, Firefox and Safari.
 
 ## Project structure
 
@@ -124,6 +119,6 @@ This is a course demo for the computing and AI degrees at Middlesex University L
 
 - Inspired by Google's [Teachable Machine](https://teachablemachine.withgoogle.com/).
 - Built on [TensorFlow.js](https://www.tensorflow.org/js) and the pre-trained MobileNet model.
-- A browser rewrite of an earlier Streamlit teachable-machine demo.
+- A rewrite of an earlier Streamlit teachable-machine demo.
 
 Maintained by [@emfink](https://github.com/emfink).
