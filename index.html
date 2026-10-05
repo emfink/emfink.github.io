@@ -32,6 +32,10 @@
   .brand { font-family: var(--head); font-stretch: 125%; font-weight: 800; font-size: 1.25rem; text-transform: uppercase; line-height: 1.05; letter-spacing: .01em; }
   .brand small { display: block; font-family: var(--body); font-stretch: 100%; font-weight: 500; font-size: .72rem; letter-spacing: .14em; color: #cfcbe3; margin-top: 4px; }
   .nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; font-weight: 600; }
+  .brand-link { display: flex; align-items: center; gap: 20px; text-decoration: none; color: inherit; }
+  .brand-link img { height: 52px; width: auto; display: block; }
+  .brand-link .sep { width: 1px; align-self: stretch; background: #ffffff40; }
+  @media (max-width: 560px) { .brand-link img { height: 40px; } .brand-link .sep { display: none; } .brand small { display: none; } .brand { font-size: 1rem; } }
   .nav li a { text-decoration: none; padding-bottom: 4px; border-bottom: 2px solid transparent; }
   .nav li a:hover { border-color: #fff; }
   @media (max-width: 760px) { .nav ul { display: none; } .topbar .in span:last-child { display: none; } }
@@ -42,13 +46,17 @@
   .hero .in { position: relative; z-index: 1; }
   .hero h1 { color: #fff; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.04; max-width: 15ch; }
   .hero p { max-width: 58ch; color: #e1def0; font-size: 1.15rem; margin: 18px 0 0; }
+  .course { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 14px 24px; background: var(--red); color: #fff; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; font-size: .95rem; border: 2px solid var(--red); }
+  .course:hover { background: #fff; color: var(--red); }
+  .course span { transition: transform .15s; } .course:hover span { transform: translateX(4px); }
+  footer a { color: #fff; text-underline-offset: 3px; }
   .steps { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; padding: 0; list-style: none; }
   .steps li { display: flex; align-items: center; gap: 10px; background: #ffffff14; border: 1px solid #ffffff2e; padding: 10px 16px; font-weight: 600; }
   .steps b { display: grid; place-items: center; width: 26px; height: 26px; background: var(--red); font-family: var(--head); font-size: .85rem; }
 
   /* layout */
   main { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px; padding-top: 40px; padding-bottom: 64px; margin-top: 0; }
-  @media (max-width: 960px) { main { grid-template-columns: 1fr; padding-top: 28px; } .topbar .in, .nav .in, .hero .in, main, footer .in { padding-left: 18px; padding-right: 18px; } }
+  @media (max-width: 960px) { main { grid-template-columns: minmax(0, 1fr); padding-top: 28px; } .topbar .in, .nav .in, .hero .in, main, footer .in { padding-left: 18px; padding-right: 18px; } }
   .stack { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
   .panel { border: 1px solid var(--line); background: var(--white); }
   .panel > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 22px; border-bottom: 1px solid var(--line); border-left: 6px solid var(--red); }
@@ -105,7 +113,7 @@
   .result-box small { display: block; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; font-size: .75rem; color: var(--muted); }
   .result { font-family: var(--head); font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-size: 1.7rem; color: var(--purple); line-height: 1.15; }
   .bars { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
-  .bar-row { display: grid; grid-template-columns: 120px 1fr 48px; align-items: center; gap: 12px; font-weight: 600; }
+  .bar-row { display: grid; grid-template-columns: minmax(0, 120px) minmax(0, 1fr) 48px; align-items: center; gap: 12px; font-weight: 600; }
   .bar-row .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .bar-row .pct { text-align: right; font-variant-numeric: tabular-nums; }
   .track { height: 14px; background: var(--soft); border: 1px solid var(--line); }
@@ -113,6 +121,26 @@
   .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
   .row .spacer { flex: 1; }
 
+  .study { background: var(--soft); border-top: 1px solid var(--line); padding: 56px 0 64px; }
+  .study .in { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+  .study h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+  .study .lead { color: var(--muted); margin: 8px 0 28px; font-size: 1.1rem; }
+  .course-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  @media (max-width: 960px) { .course-grid { grid-template-columns: 1fr; } .study .in { padding: 0 18px; } }
+  .course-card { display: flex; gap: 24px; justify-content: space-between; background: #fff; border: 1px solid var(--line); border-top: 6px solid var(--red); padding: 26px; }
+  .course-card:nth-child(2) { border-top-color: var(--purple); }
+  @media (max-width: 560px) { .course-card { flex-direction: column; } }
+  .cc-main { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+  .cc-tags { display: flex; gap: 8px; margin-bottom: 14px; }
+  .tag { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; background: var(--purple); color: #fff; }
+  .tag.alt { background: transparent; color: var(--purple); border: 1px solid var(--purple); }
+  .course-card h3 { font-size: 1.15rem; line-height: 1.2; margin-bottom: 12px; }
+  .course-card p { margin: 0 0 20px; color: var(--text); }
+  .course-card .course { margin-top: auto; }
+  .cc-qr { margin: 0; flex: none; text-align: center; width: 150px; }
+  .cc-qr .qr { width: 150px; height: 150px; display: block; border: 1px solid var(--line); }
+  .cc-qr figcaption { font-size: .8rem; color: var(--muted); margin-top: 8px; line-height: 1.3; }
+  @media print { .nav, .topbar { display: none; } }
   footer { background: var(--purple-d); color: #cfcbe3; font-size: .9rem; }
   footer .in { padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 </style>
@@ -121,11 +149,16 @@
 
 <div class="topbar"><div class="in"><span>Computer science · Machine learning demo</span><span>Runs entirely in your browser</span></div></div>
 <nav class="nav" aria-label="Sections"><div class="in">
-  <div class="brand">Teachable Machine Lab<small>Image classification in the browser</small></div>
+  <a class="brand-link" href="https://www.mdx.ac.uk/" target="_blank" rel="noopener" aria-label="Middlesex University London">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABCCAMAAADnnS2WAAAAq1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Nr6iZAAAAOHRSTlMA/AwJwfSfMBD40OGO8F8H7OY6x0+2IEAYb38kFFRL3CySJ4PUzNi8WRuxdWQ0iXqsmKdoRqShQ6cQx44AAAsnSURBVGjevJfplqIwEEYrbLIvAiraKu4oKq7t9/5PNhSNM9ojs/SZM/cHkSQm91SqjpE+sU67w21/cl0tLAF1HMbavnCjdkenP2Swo+8oQItq2oBG1OLn3yHrg/Qy3BZ7LQ7HDhoRlqlcJ/1zdtlNdUmiGk/27h/kykOI/r8VnOAL+BZ90FmFcYcYOwyzskmA078V1PAliKk2FBGV6AFg84FMrul/EzTQTI8qIrAX768+hO4/Cca7ExpZU0UCYMEJmQNQPKJetzslptd1R4taUJ5m2fZJ0Eu3fXfqETM497MBMfotz0dvRDTtdtcfjUzNEgllvxXcw1AdlljBwLI0deuTTgIwlWAaGwAeBSVbBeDPuK4K/qiOOF9ClJhdorOBk0fyHHOPFHxGncWC24wuVTsvrEbBK6wltkSdIFjA/yFYCIztWVAJDpYwDv3ro6At1MMsFMIluhlwtIM/JeqMYdkTC+MB6SHUNiVCRPRCMJTkDbdLWlV+KWlNgt4K8RUHoqHYvHNnLdhyEPbuOahBJM85uFNFTqQrWOq89rCUI6IjglYprGJPNFKx6QXYeK8E1Q7NKlE6fDT6okGQRzQXyx4dkcyA3V3QhhhSLdixsNCfBfew2CiB2HGKdYmRLLzzknOEMnkHGO/CSemVoNistwIop9soOelHp0lwPcY+9Y22ZIrWGRjWgp4Cf3oXvBg4PlexF1f1pG+BjGOh8FzqAGci7y3EeM1BBrCnF4JMIofOXMnoopi+NW3jBVNipg4SKUS+c5b6UCCpBeUlgre74BboPwtKCubb/SEMAJcGcyDQptXQ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" alt="Middlesex University London" width="160" height="66">
+    <span class="sep" aria-hidden="true"></span>
+    <span class="brand">Teachable Machine Lab<small>Image classification in the browser</small></span>
+  </a>
   <ul>
     <li><a href="#camera">Camera</a></li>
     <li><a href="#classes">Classes</a></li>
     <li><a href="#predict">Predict</a></li>
+    <li><a href="#study">Courses</a></li>
   </ul>
 </div></nav>
 
@@ -137,6 +170,7 @@
     <li><b>2</b> Hold to record examples</li>
     <li><b>3</b> Start predicting</li>
   </ol>
+  <a class="course" href="#study">Explore the courses <span aria-hidden="true">→</span></a>
 </div></section>
 
 <main>
@@ -187,7 +221,39 @@
   </section>
 </main>
 
-<footer><div class="in"><span>Teachable Machine Lab · MobileNet features + KNN classifier (TensorFlow.js)</span><span>No data is uploaded or stored</span></div></footer>
+
+<section class="study" id="study"><div class="in">
+  <h2>Study at Middlesex</h2>
+  <p class="lead">Interested in how this works? Explore the courses behind it.</p>
+  <div class="course-grid">
+    <article class="course-card">
+      <div class="cc-main">
+        <div class="cc-tags"><span class="tag">Undergraduate</span><span class="tag alt">BSc (Hons)</span></div>
+        <h3>Artificial Intelligence and Data Science</h3>
+        <p>Learn machine learning and Python with industry projects and placements, for fast entry into graduate roles.</p>
+        <a class="course" href="https://www.mdx.ac.uk/courses/undergraduate/artificial-intelligence-and-data-science-bsc-honours/" target="_blank" rel="noopener">View the BSc <span aria-hidden="true">→</span></a>
+      </div>
+      <figure class="cc-qr">
+        <svg viewBox="0 0 45 45" class="qr"><title>QR code linking to Artificial Intelligence and Data Science BSc (Hons)</title><path fill="#fff" d="M0 0h45v45h-45z"/><path class="qrline" stroke="#2f2552" d="M2 2.5h7m2 0h1m2 0h3m1 0h1m2 0h1m1 0h3m2 0h6m2 0h7m-41 1h1m5 0h1m6 0h2m2 0h1m2 0h1m2 0h2m1 0h2m1 0h2m1 0h1m1 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m3 0h5m1 0h2m2 0h4m2 0h1m2 0h1m4 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m3 0h2m1 0h2m2 0h1m3 0h2m1 0h1m1 0h2m2 0h1m3 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m2 0h4m2 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m1 0h1m3 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h1m3 0h1m4 0h3m2 0h1m1 0h2m1 0h6m1 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m1 0h1m2 0h2m2 0h3m3 0h1m1 0h3m-32 1h1m2 0h1m1 0h2m1 0h3m2 0h1m1 0h2m2 0h1m1 0h1m1 0h4m1 0h1m3 0h2m1 0h1m-36 1h1m7 0h1m2 0h3m2 0h3m1 0h3m2 0h2m1 0h3m1 0h3m2 0h4m-41 1h1m1 0h1m1 0h1m1 0h2m1 0h1m3 0h2m2 0h3m1 0h1m3 0h2m1 0h2m1 0h1m1 0h2m1 0h4m-40 1h2m1 0h1m3 0h1m1 0h1m2 0h2m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m4 0h1m2 0h1m-38 1h1m3 0h2m3 0h4m3 0h1m2 0h2m2 0h2m1 0h1m1 0h1m1 0h4m2 0h1m1 0h2m-39 1h4m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m2 0h2m1 0h1m1 0h2m2 0h3m1 0h1m3 0h1m1 0h1m-38 1h1m1 0h1m1 0h2m1 0h2m1 0h2m2 0h1m1 0h2m3 0h2m1 0h1m5 0h1m1 0h1m1 0h2m2 0h1m-41 1h2m1 0h1m4 0h2m2 0h7m1 0h2m1 0h1m1 0h2m1 0h3m3 0h1m4 0h1m-40 1h1m1 0h1m2 0h3m1 0h1m1 0h7m2 0h3m1 0h1m2 0h1m1 0h1m1 0h2m2 0h1m3 0h2m-41 1h2m5 0h3m2 0h1m3 0h2m2 0h2m1 0h1m1 0h2m1 0h2m4 0h2m3 0h2m-40 1h2m1 0h5m1 0h1m2 0h2m2 0h1m4 0h1m1 0h3m3 0h1m1 0h2m2 0h5m-38 1h1m7 0h5m5 0h1m1 0h2m3 0h2m2 0h2m1 0h1m1 0h1m-38 1h1m2 0h2m1 0h1m1 0h1m4 0h3m1 0h1m4 0h5m4 0h5m2 0h1m1 0h1m-40 1h2m5 0h1m3 0h6m2 0h3m1 0h1m1 0h1m1 0h2m2 0h4m2 0h3m-37 1h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h2m1 0h1m2 0h2m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-38 1h4m3 0h2m5 0h1m1 0h1m2 0h8m1 0h2m3 0h1m2 0h1m-39 1h1m4 0h4m2 0h2m1 0h1m1 0h2m2 0h2m1 0h4m1 0h2m2 0h4m4 0h1m-39 1h3m2 0h3m1 0h1m3 0h1m2 0h5m1 0h1m4 0h3m1 0h1m3 0h1m1 0h1m-39 1h1m1 0h1m2 0h3m2 0h1m1 0h2m1 0h3m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h2m3 0h2m-40 1h2m2 0h1m1 0h1m2 0h2m1 0h1m2 0h3m1 0h2m1 0h1m1 0h1m2 0h2m2 0h3m1 0h1m-33 1h1m1 0h1m2 0h1m3 0h3m1 0h1m3 0h2m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m4 0h1m-39 1h1m1 0h2m2 0h7m1 0h1m2 0h3m3 0h2m1 0h1m5 0h2m1 0h4m-41 1h1m1 0h1m3 0h3m2 0h3m3 0h2m3 0h1m3 0h1m1 0h1m6 0h1m1 0h1m1 0h2m-38 1h1m1 0h1m1 0h1m2 0h2m1 0h1m3 0h2m2 0h1m2 0h1m1 0h1m2 0h3m1 0h1m2 0h1m3 0h1m-41 1h1m1 0h2m2 0h3m2 0h2m1 0h3m4 0h1m2 0h5m3 0h5m1 0h1m1 0h1m-33 1h2m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h2m2 0h1m2 0h2m3 0h3m1 0h1m-41 1h7m2 0h2m3 0h1m1 0h1m1 0h5m1 0h1m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h2m-40 1h1m5 0h1m1 0h4m1 0h2m1 0h1m1 0h2m3 0h3m2 0h1m1 0h1m1 0h1m3 0h1m1 0h3m-41 1h1m1 0h3m1 0h1m2 0h3m1 0h4m1 0h1m1 0h1m2 0h7m2 0h5m3 0h1m-41 1h1m1 0h3m1 0h1m1 0h9m1 0h3m1 0h1m2 0h1m3 0h1m3 0h2m1 0h1m2 0h1m-40 1h1m1 0h3m1 0h1m2 0h1m2 0h3m1 0h2m2 0h4m1 0h2m4 0h2m3 0h5m-41 1h1m5 0h1m5 0h1m1 0h1m1 0h1m2 0h1m1 0h5m1 0h1m1 0h4m2 0h1m3 0h1m-40 1h7m1 0h2m1 0h4m1 0h3m1 0h2m2 0h1m4 0h2m1 0h1m2 0h3m1 0h1"/></svg>
+        <figcaption>Scan to open the course page</figcaption>
+      </figure>
+    </article>
+    <article class="course-card">
+      <div class="cc-main">
+        <div class="cc-tags"><span class="tag">Postgraduate</span><span class="tag alt">MSc</span></div>
+        <h3>Applied AI and Data Science</h3>
+        <p>Build practical skills in machine learning, visual analytics and data governance, and prepare for a career in a fast-growing field.</p>
+        <a class="course" href="https://www.mdx.ac.uk/courses/postgraduate/applied-ai-and-data-science-msc/" target="_blank" rel="noopener">View the MSc <span aria-hidden="true">→</span></a>
+      </div>
+      <figure class="cc-qr">
+        <svg viewBox="0 0 41 41" class="qr"><title>QR code linking to Applied AI and Data Science MSc</title><path fill="#fff" d="M0 0h41v41h-41z"/><path class="qrline" stroke="#2f2552" d="M2 2.5h7m1 0h3m1 0h1m2 0h2m1 0h3m2 0h1m2 0h3m1 0h7m-37 1h1m5 0h1m7 0h3m2 0h2m1 0h1m5 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m1 0h4m2 0h1m3 0h1m1 0h2m2 0h1m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m2 0h4m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m2 0h1m1 0h5m2 0h3m1 0h3m2 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m1 0h1m1 0h2m2 0h2m1 0h1m1 0h2m2 0h1m4 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m2 0h1m2 0h1m4 0h1m1 0h2m1 0h1m2 0h2m-29 1h1m3 0h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h6m2 0h1m1 0h5m2 0h1m-37 1h2m2 0h2m1 0h1m1 0h1m1 0h1m6 0h3m2 0h1m1 0h3m4 0h1m2 0h1m-36 1h1m5 0h2m1 0h4m2 0h1m2 0h1m1 0h1m1 0h3m2 0h2m2 0h1m1 0h2m-33 1h1m5 0h1m1 0h14m2 0h2m2 0h3m1 0h2m-36 1h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m2 0h1m3 0h4m3 0h3m2 0h4m-37 1h1m2 0h1m4 0h9m5 0h2m1 0h5m2 0h2m1 0h1m-36 1h2m2 0h3m2 0h2m1 0h1m1 0h4m2 0h1m1 0h3m2 0h3m1 0h4m-35 1h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h4m1 0h5m4 0h2m3 0h2m1 0h1m-34 1h4m1 0h6m1 0h2m3 0h1m1 0h3m1 0h1m4 0h3m1 0h2m1 0h1m-35 1h4m3 0h4m3 0h1m3 0h1m2 0h1m1 0h1m1 0h2m2 0h2m2 0h1m-33 1h1m2 0h2m1 0h2m1 0h3m1 0h1m3 0h1m1 0h4m1 0h2m4 0h2m-34 1h1m2 0h1m2 0h1m3 0h2m4 0h1m1 0h1m1 0h1m4 0h1m3 0h2m2 0h2m-36 1h2m3 0h2m1 0h1m2 0h2m1 0h4m1 0h4m1 0h1m1 0h2m1 0h3m2 0h1m-33 1h1m1 0h1m2 0h2m2 0h3m1 0h4m4 0h1m1 0h5m1 0h2m-33 1h1m2 0h1m1 0h2m1 0h1m3 0h2m1 0h1m2 0h1m2 0h1m1 0h2m1 0h2m1 0h6m-34 1h4m3 0h2m5 0h2m4 0h1m2 0h1m2 0h1m3 0h2m1 0h1m1 0h1m-37 1h1m3 0h4m1 0h1m2 0h3m1 0h1m2 0h3m1 0h2m2 0h1m2 0h2m1 0h3m-36 1h2m1 0h1m3 0h5m6 0h1m4 0h1m2 0h3m3 0h3m-31 1h1m1 0h1m1 0h1m1 0h2m2 0h2m1 0h1m2 0h2m1 0h5m3 0h1m1 0h2m-26 1h2m1 0h1m1 0h6m1 0h1m5 0h2m1 0h2m2 0h1m1 0h1m-37 1h7m1 0h6m3 0h1m1 0h1m1 0h2m1 0h1m3 0h5m1 0h1m-27 1h2m1 0h1m2 0h3m1 0h1m2 0h5m2 0h1m3 0h1m-33 1h7m1 0h2m3 0h3m1 0h1m2 0h2m1 0h2m3 0h1m1 0h1m1 0h1m2 0h1m-36 1h1m5 0h1m2 0h2m1 0h4m1 0h5m4 0h1m1 0h1m3 0h3m-35 1h1m1 0h3m1 0h1m1 0h1m2 0h1m6 0h1m2 0h3m2 0h1m1 0h9m-37 1h1m1 0h3m1 0h1m2 0h2m2 0h1m2 0h1m6 0h1m1 0h2m1 0h1m1 0h2m2 0h1m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h2m1 0h1m3 0h3m1 0h1m1 0h3m1 0h1m2 0h2m3 0h1m-35 1h1m5 0h1m3 0h1m1 0h1m4 0h1m2 0h2m1 0h2m1 0h2m2 0h1m1 0h1m1 0h2m-36 1h7m1 0h5m2 0h3m2 0h2m1 0h2m2 0h1m1 0h3m2 0h3"/></svg>
+        <figcaption>Scan to open the course page</figcaption>
+      </figure>
+    </article>
+  </div>
+</div></section>
+
+<footer><div class="in"><span>Teachable Machine Lab · MobileNet features + KNN classifier (TensorFlow.js)</span><span>No data is uploaded or stored</span><span style="flex-basis:100%">A course demo for <a href="https://www.mdx.ac.uk/courses/undergraduate/artificial-intelligence-and-data-science-bsc-honours/" target="_blank" rel="noopener">BSc (Hons) Artificial Intelligence and Data Science</a>. Not an official Middlesex University website.</span></div></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js"></script>
