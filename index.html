@@ -162,7 +162,9 @@
   /* ============ footer ============ */
   footer { background: var(--purple-d); color: #cfcbe3; font-size: .9rem; }
   footer a { color: #fff; text-underline-offset: 3px; }
-  footer .credit { flex-basis: 100%; font-size: .8rem; opacity: .85; padding-top: .6rem; border-top: 1px solid #ffffff1f; }
+  footer .credit, footer .demo, footer .fine { flex-basis: 100%; }
+  footer .credit { color: #fff; }
+  footer .fine { font-size: .8rem; opacity: .8; padding-top: .7rem; margin-top: .3rem; border-top: 1px solid #ffffff1f; }
   footer .in { padding-top: 1.4rem; padding-bottom: 1.4rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; }
 
   /* ============ wide screens: QR cards in the side margins ============ */
@@ -341,7 +343,7 @@
   </div>
 </div></section>
 
-<footer><div class="in"><span>Teachable Machine Lab · MobileNet features + KNN classifier (TensorFlow.js)</span><span>No data is uploaded or stored</span><span style="flex-basis:100%">A course demo for <a href="https://www.mdx.ac.uk/courses/undergraduate/artificial-intelligence-and-data-science-bsc-honours/" target="_blank" rel="noopener">BSc (Hons) Artificial Intelligence and Data Science</a>. Not an official Middlesex University website.</span><span class="credit"><strong>Original author:</strong> <a href="https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-elisabeth-fink/" target="_blank" rel="noopener">Dr Elisabeth Fink</a>, Lecturer in Computer Science, Middlesex University London (<a href="https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-elisabeth-fink/" target="_blank" rel="noopener">staff profile</a> · <a href="https://www.linkedin.com/in/elisabeth-fink-b393a466" target="_blank" rel="noopener">LinkedIn</a>).</span></div></footer>
+<footer><div class="in"><span class="credit"><strong>Original author:</strong> <a href="https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-elisabeth-fink/" target="_blank" rel="noopener">Dr Elisabeth Fink</a>, Lecturer in Computer Science, Middlesex University London · <a href="https://www.linkedin.com/in/elisabeth-fink-b393a466" target="_blank" rel="noopener">LinkedIn</a></span><span class="demo">A course demo for Middlesex's AI and Data Science programmes (<a href="https://www.mdx.ac.uk/courses/undergraduate/artificial-intelligence-and-data-science-bsc-honours/" target="_blank" rel="noopener">BSc</a> · <a href="https://www.mdx.ac.uk/courses/postgraduate/applied-ai-and-data-science-msc/" target="_blank" rel="noopener">MSc</a>). Not an official Middlesex University website.</span><span class="fine">Teachable Machine Lab · No data is uploaded or stored</span></div></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js"></script>
