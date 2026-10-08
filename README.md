@@ -115,10 +115,8 @@ This is a course demo for the computing and AI degrees at Middlesex University L
 
 > This is a course demo and not an official Middlesex University website. The Middlesex name and logo belong to Middlesex University.
 
-## Acknowledgements
+## Credits
 
-- Inspired by Google's [Teachable Machine](https://teachablemachine.withgoogle.com/).
-- Built on [TensorFlow.js](https://www.tensorflow.org/js) and the pre-trained MobileNet model.
-- A rewrite of an earlier Streamlit teachable-machine demo.
+**Original author: [Dr Elisabeth Fink](https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-elisabeth-fink/)**, Lecturer in Computer Science at Middlesex University London ([staff profile](https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-elisabeth-fink/) · [LinkedIn](https://www.linkedin.com/in/elisabeth-fink-b393a466)).
 
-Maintained by [@emfink](https://github.com/emfink).
+Built with [TensorFlow.js](https://www.tensorflow.org/js) and the pre-trained MobileNet model, and inspired by Google's [Teachable Machine](https://teachablemachine.withgoogle.com/).
